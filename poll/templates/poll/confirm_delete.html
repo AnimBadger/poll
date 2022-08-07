@@ -1,0 +1,19 @@
+{% extends 'poll/base.html' %}
+{% block main %}
+
+<h1>Confirm delete of {{ poll.question }}</h1>
+<div>
+    
+    <form action="{% url 'con-delete' poll.id %}" method="POST">
+        {% csrf_token %}
+        <a href="{% url 'home' %}"> Cancel </a>
+        <input type="submit" value="Delete">
+        
+    </form>
+</div>
+
+{% endblock  %}
+
+
+
+
